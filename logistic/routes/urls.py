@@ -4,6 +4,6 @@ from . import views
 app_name = 'routes'
 urlpatterns = [
     # /routes/
-    url(r'^$', views.IndexView.as_view(), name="index"),
+    url(r'^routes/$', views.IndexView.as_view(), name="index"),
 
 ]

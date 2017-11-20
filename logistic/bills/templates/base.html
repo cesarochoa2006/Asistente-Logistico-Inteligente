@@ -1,6 +1,7 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <title>LOGISTIC IA</title>
@@ -14,17 +15,28 @@
     <link href="{% static 'style.css' %}" type="text/css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">Logistic IA</a>
+<!-- Header -->
+<nav class="navbar navbar-inverse">
+    <div class="container-field">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-brand" href="{% url 'bills:index' %}">Logistic IA</a>
+        </div>
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'bills:index' %}"> Facturas <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
+                <li><a href="{% url 'routes:index' %}"> Rutas <span class="glyphicon glyphicon-road" aria-hidden="true"></span></a></li>
+            </ul>
+        </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="{% url 'bills:index' %}"> Facturas <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
-      <li><a href="{% url 'routes:index' %}"> Rutas <span class="glyphicon glyphicon-road" aria-hidden="true"></span></a></li>
-    </ul>
-  </div>
 </nav>
+
 {% block body %}
 {% endblock %}
 </body>
