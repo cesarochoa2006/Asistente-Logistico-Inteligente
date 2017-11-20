@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGISTIC IA</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam:700" rel="stylesheet">
+    <link href="static/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Logistic IA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'bills:index' %}"> Facturas <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
+      <li><a href="{% url 'routes:index' %}"> Rutas <span class="glyphicon glyphicon-road" aria-hidden="true"></span></a></li>
+    </ul>
+  </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
