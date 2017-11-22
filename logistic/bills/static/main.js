@@ -20,19 +20,49 @@ function initializeMap() {
             featureType: "poi",
             elementType: "labels",
             stylers: [
-                { visibility: "off" }
+                {visibility: "off"}
             ]
         }]
-    };
+
+    }
+    var geocoder = new google.maps.Geocoder();
+
+    document.getElementById('locate-dir').addEventListener('click', function () {
+        geocodeAddress(geocoder, map);
+    });
+    //Geocode User Address
+    function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('add').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+
+            });
+            nodes.push(results[0].geometry.location);
+            $('#get-status').text(''+status)
+          } else {
+            $('#get-status').text(''+status)
+              alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+
     map = new google.maps.Map(document.getElementById('map-canvas'), opts);
+
+
+
+
 
     // Create map click event
     google.maps.event.addListener(map, 'click', function(event) {
         // Add destination (max 9)
-        if (nodes.length >= 9) {
-            loadPopup({msg:'Max destinations added'});
-            return;
-        }
+        //if (nodes.length >= 9) {
+        //    loadPopup({msg:'Max destinations added'});
+        //    return;
+        //}
 
         // If there are directions being shown, clear them
         clearDirections();
@@ -78,7 +108,7 @@ function getDurations(callback) {
     service.getDistanceMatrix({
         origins: nodes,
         destinations: nodes,
-        travelMode: google.maps.TravelMode[$('#travel-type').val()],
+        travelMode: google.maps.TravelMode['DRIVING'],
         avoidHighways: parseInt($('#avoid-highways').val()) > 0 ? true : false,
         avoidTolls: false,
     }, function(distanceData) {
@@ -172,7 +202,7 @@ $(document).ready(function() {
 
             ga.evolvePopulation(pop, function(update) {
                 $('#generations-passed').html(update.generation);
-                $('#best-time').html((update.population.getFittest().getDistance() / 60).toFixed(2) + ' Mins');
+                $('#best-time').html((update.population.getFittest().getDistance() / 60).toFixed(2) + ' Minutes');
 
                 // Get route coordinates
                 var route = update.population.getFittest().chromosome;
@@ -214,7 +244,7 @@ $(document).ready(function() {
                     origin: nodes[route[0]],
                     destination: nodes[route[0]],
                     waypoints: waypts,
-                    travelMode: google.maps.TravelMode[$('#travel-type').val()],
+                    travelMode: google.maps.TravelMode['DRIVING'],
                     avoidHighways: parseInt($('#avoid-highways').val()) > 0 ? true : false,
                     avoidTolls: false
                 };
@@ -241,13 +271,13 @@ var ga = {
 
     "tickerSpeed": 75,
 
-    // Loads config from HTML inputs
+    // Initial Config
     "getConfig": function() {
-        ga.crossoverRate = parseFloat($('#crossover-rate').val());
-        ga.mutationRate = parseFloat($('#mutation-rate').val());
-        ga.populationSize = parseInt($('#population-size').val()) || 50;
+        ga.crossoverRate = 0.7;
+        ga.mutationRate = 0.2;
+        ga.populationSize = 200;
         ga.elitism = parseInt($('#elitism').val()) || false;
-        ga.maxGenerations = parseInt($('#maxGenerations').val()) || 50;
+        ga.maxGenerations = 150;
     },
 
     // Evolves given population

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe3de5d-b9b0-4bca-9509-740c9dc5e447" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/db.sqlite3-journal" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/db.sqlite3" afterPath="$PROJECT_DIR$/logistic/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/clasify.py" afterPath="$PROJECT_DIR$/logistic/bills/clasify.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/models.py" afterPath="$PROJECT_DIR$/logistic/bills/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/static/main.js" afterPath="$PROJECT_DIR$/logistic/bills/static/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/static/style.css" afterPath="$PROJECT_DIR$/logistic/bills/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" afterPath="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/views.py" afterPath="$PROJECT_DIR$/logistic/bills/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/templates/routes/index.html" afterPath="$PROJECT_DIR$/logistic/bills/templates/routes/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,16 +51,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistic/bills/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/models.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clasify.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clasify.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/clasify.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2665">
@@ -99,9 +84,31 @@
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logistic/bills/templates/routes/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logistic/bills/static/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="204" column="110" lean-forward="false" selection-start-line="204" selection-start-column="110" selection-end-line="204" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2288">
+            <state relative-caret-position="506">
               <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
@@ -121,8 +128,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="80" column="13" lean-forward="false" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -142,6 +149,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>distancemapped</find>
+      <find>travelmODE</find>
+      <find>#population-size</find>
+      <find>nodes</find>
+      <find>nodes.length</find>
+      <find>9</find>
+      <find>maxGenerations</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,8 +179,6 @@
         <option value="$PROJECT_DIR$/logistic/routes/views.py" />
         <option value="$PROJECT_DIR$/../googlemaps-tsp-ga/index.html" />
         <option value="$PROJECT_DIR$/logistic/bills/templates/base.html" />
-        <option value="$PROJECT_DIR$/logistic/bills/static/main.js" />
-        <option value="$PROJECT_DIR$/logistic/bills/templates/routes/index.html" />
         <option value="$USER_HOME$/OneDrive - Universidad Nacional de Colombia/Inteligencia artificial/Proyecto/documento.py" />
         <option value="$PROJECT_DIR$/logistic/logistic/settings.py" />
         <option value="$PROJECT_DIR$/logistic/bills/forms.py" />
@@ -177,8 +188,10 @@
         <option value="$USER_HOME$/OneDrive - Universidad Nacional de Colombia/Alvarez Hernandez Html/Página/main_files_html/contact.html" />
         <option value="$PROJECT_DIR$/logistic/bills/views.py" />
         <option value="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" />
-        <option value="$PROJECT_DIR$/logistic/bills/static/style.css" />
         <option value="$PROJECT_DIR$/logistic/bills/clasify.py" />
+        <option value="$PROJECT_DIR$/logistic/bills/static/style.css" />
+        <option value="$PROJECT_DIR$/logistic/bills/templates/routes/index.html" />
+        <option value="$PROJECT_DIR$/logistic/bills/static/main.js" />
       </list>
     </option>
   </component>
@@ -267,6 +280,20 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="bills" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Proyecto-IA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-IA" type="462c0819:PsiDirectoryNode" />
+              <item name="logistic" type="462c0819:PsiDirectoryNode" />
+              <item name="bills" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-IA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-IA" type="462c0819:PsiDirectoryNode" />
+              <item name="logistic" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -345,7 +372,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12915407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -355,7 +381,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -601,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/templates/routes/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logistic/logistic/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
@@ -619,13 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-154">
           <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/static/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -716,9 +728,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logistic/bills/clasify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2665">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2288">
+        <state relative-caret-position="506">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
@@ -726,16 +746,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        <state relative-caret-position="473">
+          <caret line="80" column="13" lean-forward="false" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/clasify.py">
+    <entry file="file://$PROJECT_DIR$/logistic/bills/templates/routes/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2665">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="330">
+          <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic/bills/static/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="204" column="110" lean-forward="false" selection-start-line="204" selection-start-column="110" selection-end-line="204" selection-end-column="110" />
           <folding />
         </state>
       </provider>
