@@ -5,4 +5,4 @@ class FileForm(forms.ModelForm):
 
     class Meta:
         model = File
-        fields = ['file_name', 'file_file']
+        fields = ['file_file', 'thumbnail']

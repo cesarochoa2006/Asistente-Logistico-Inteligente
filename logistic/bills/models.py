@@ -2,5 +2,5 @@ from django.db import models
 
 # Create your models here.
 class File(models.Model):
-    file_name = models.CharField(max_length=250)
     file_file = models.FileField(default='')
+    thumbnail = models.CharField(max_length=250, default='https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/48551/versions/6/screenshot.jpg')

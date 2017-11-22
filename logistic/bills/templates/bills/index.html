@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid body">
+    <div class="col-lg-12">
+        <div>
+            <h1>Files & Data</h1>
+            {% if count_rows < 1 %}
+            <a href="{% url 'bills:upload_file' %}">
+                <button type="button" class="btn btn-default" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload </button>
+            </a>
+            <p>*Remember, your Excel file has to be named "DATOS.xlsx"</p>
+            {% endif %}
+        </div>
+        {% if file_list %}
+        <ul id="home_list">
+            <li >
+                <div class="col-sm-4 col-lg-2">
+                    <div class="panel panel-default" style="text-align: center">
+                        <div class="panel-body">
+                            <h3>Training Data</h3>
+                            <div class="thumbnail">
+                                <a href="{% url 'bills:index' %}">
+                                    <img src="{{ file_list.0.thumbnail }}" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="caption">
+                                <button class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Update File
+                                </button>
+                                <h5></h5>
+                                <form action="{% url 'bills:delete_file' file_list.0.id %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="file.id" value="{{ file_list.0.id }}" />
+                                    <button type="submit" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-trash"></span> Delete File
+                                    </button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            <li>
+                {% if content_table %}
+            <li id="spreadsheet">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr><h3>Datos</h3></tr>
+                            <tr>
+                                {% for row in table_header %}
+                                <td><h5>{{row}}</h5></td>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for attr in content_table %}
+                            <tr>
+                                {% for value in attr %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

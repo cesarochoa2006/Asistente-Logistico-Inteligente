@@ -1,55 +1,47 @@
-from django.shortcuts import render
+from django.conf.global_settings import MEDIA_ROOT
+from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView,View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import user_passes_test
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from .models import File
-from .forms import FileForm
-from django.http import HttpResponseRedirect
-
-
+from . import clasify as cla
+import os
 
 # Create your views here.
 
-
-"""
-class IndexView(View):
-    context_object_name = 'index'
-    template_name = 'index.html'
-    def get(self, request):
-        return render(request,self.template_name)
-"""
-
 class IndexView(ListView):
     context_object_name = 'Files'
-    template_name = 'index.html'
+    template_name = 'bills/index.html'
     queryset = File.objects.all()
+    file_path = os.path.join(MEDIA_ROOT, 'DATOS.xlsx') or None
+
+
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['file_list'] = File.objects.order_by('file_name')
-        #context['venue_list'] = Venue.objects.all()
-        #context['festival_list'] = Festival.objects.all()
-        # And so on for more models
+        context['file_list'] = File.objects.all()
+        context['count_rows'] = File.objects.count()
+        try:
+            context['content_table']=cla.list_of_list(self.file_path)
+            context['table_header'] = cla.table_head(self.file_path)
+        except:
+            context['content_table'] = None
+            context['table_header'] = None
         return context
 
 #File Uploading
-"""
-def createFile(request):
-    form = FileForm(request.POST or None, request.FILES or None)
-    if form.is_valid():
-        file=form.save(commit=False)
-        file.save()
-        context = {
-            "form": form,
-        }
-        return render(request,'bills:index',context)
-"""
-#@method_decorator(user_passes_test(lambda u: u.is_admin), name='dispatch')
-class createFile(CreateView):
+
+class UploadFile(CreateView):
     model = File
-    #form_class = FileForm
-    template_name = 'create-file.html'
-    fields=['file_name','file_file']
+    template_name = 'bills/upload-file.html'
+    fields=['file_file','thumbnail']
     success_url = reverse_lazy('bills:index')
+#File Delete
+class FileDelete(DeleteView):
+    redirect_field_name = 'redirect_to'
+    model = File
+    success_url = reverse_lazy('bills:index')
+
 

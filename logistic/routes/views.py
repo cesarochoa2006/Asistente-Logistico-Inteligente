@@ -7,7 +7,7 @@ from django.views.generic import ListView,View
     template_name = 'index.html'
 """
 class IndexView(View):
-    context_object_name = 'index'
-    template_name = 'index.html'
+    #context_object_name = 'index'
+    template_name = 'routes/index.html'
     def get(self, request):
         return render(request,self.template_name)

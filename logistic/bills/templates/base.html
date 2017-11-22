@@ -13,10 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Amaranth:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kalam:700" rel="stylesheet">
     <link href="{% static 'style.css' %}" type="text/css" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCiQYTNub53NHbde4y56ID6Ro8K7m3avZE"></script>
 </head>
 <body>
 <!-- Header -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-field">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
@@ -39,5 +41,6 @@
 
 {% block body %}
 {% endblock %}
+<script src="{% static 'main.js' %}"></script>
 </body>
 </html>

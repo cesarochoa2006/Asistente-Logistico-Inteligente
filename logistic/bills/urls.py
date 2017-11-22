@@ -5,5 +5,8 @@ app_name = 'bills'
 urlpatterns = [
     # /bills/
     url(r'^$', views.IndexView.as_view(), name="index"),
-    url(r'^create_file/$', views.createFile.as_view(), name='create_file'),
+    url(r'^upload_file/$', views.UploadFile.as_view(), name="upload_file"),
+    url(r'^delete_file/(?P<pk>[0-9]+)$', views.FileDelete.as_view(), name='delete_file')
+
+
 ]
