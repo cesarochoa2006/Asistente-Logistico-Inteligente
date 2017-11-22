@@ -44,4 +44,15 @@ class FileDelete(DeleteView):
     model = File
     success_url = reverse_lazy('bills:index')
 
+class UpdateFile(UpdateView):
+    redirect_file_name='redirect_to'
+    model=File
+    success_url = reverse_lazy('bills:index')
+    fields=['file_file','thumbnail']
+    template_name = 'bills/upload-file.html'
 
+    # def form_valid(self, form):
+    #     object = form.save(commit=False)
+    #     object.user = self.request.user
+    #     object.save()
+    #     return super(UpdateFile, self).form_valid(form)

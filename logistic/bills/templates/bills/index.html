@@ -24,9 +24,13 @@
                                 </a>
                             </div>
                             <div class="caption">
-                                <button class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-trash"></span> Update File
-                                </button>
+                                <form action="{% url 'bills:update_file' file_list.0.id %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="file.id" value="{{ file_list.0.id }}" />
+                                    <button type="submit" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-File"></span> Update File
+                                    </button>
+                                </form>
                                 <h5></h5>
                                 <form action="{% url 'bills:delete_file' file_list.0.id %}" method="post" style="display: inline;">
                                     {% csrf_token %}
