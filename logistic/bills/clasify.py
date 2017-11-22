@@ -40,8 +40,9 @@ def table_head(filepath):
         doc = openpyxl.load_workbook(filepath)
         hoja1 = doc.get_sheet_by_name('Hoja1')
         doc.close()
-        return [hoja1.cell(row=1,column=2).value,
-            hoja1.cell(row=1, column=3).value,
+        return ["N°",
+            hoja1.cell(row=1,column=2).value,
+            #hoja1.cell(row=1, column=3).value,
             hoja1.cell(row=1, column=4).value,
             hoja1.cell(row=1, column=6).value,
             hoja1.cell(row=1, column=7).value,
@@ -55,6 +56,7 @@ def list_of_list(filepath):
     if filepath:
         doc = openpyxl.load_workbook(filepath)
         hoja1 = doc.get_sheet_by_name('Hoja1')
+
         lista_envios = []
         for i in range(93 - 1):
             cliente = hoja1.cell(row=i + 2, column=2).value  # se guarda la variable cliente

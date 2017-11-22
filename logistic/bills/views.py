@@ -16,19 +16,19 @@ class IndexView(ListView):
     context_object_name = 'Files'
     template_name = 'bills/index.html'
     queryset = File.objects.all()
-    file_path = os.path.join(MEDIA_ROOT, 'DATOS.xlsx') or None
+    file_path = os.path.join(MEDIA_ROOT,'DATOS.xlsx')# or None
 
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['file_list'] = File.objects.all()
         context['count_rows'] = File.objects.count()
-        try:
-            context['content_table']=cla.list_of_list(self.file_path)
-            context['table_header'] = cla.table_head(self.file_path)
-        except:
-            context['content_table'] = None
-            context['table_header'] = None
+
+        context['content_table']=cla.list_of_list(self.file_path)
+        context['table_header'] = cla.table_head(self.file_path)
+
+            #context['content_table'] = None
+            #context['table_header'] = None
         return context
 
 #File Uploading

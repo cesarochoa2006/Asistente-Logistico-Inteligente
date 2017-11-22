@@ -12,7 +12,7 @@
             {% endif %}
         </div>
         {% if file_list %}
-        <ul id="home_list">
+        <ul id="home_list_1">
             <li >
                 <div class="col-sm-4 col-lg-2">
                     <div class="panel panel-default" style="text-align: center">
@@ -41,14 +41,13 @@
 
                     </div>
                 </div>
-
             <li>
                 {% if content_table %}
             <li id="spreadsheet">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <table class="table table-striped">
-                            <thead>
+                            <thead >
                             <tr><h3>Datos</h3></tr>
                             <tr>
                                 {% for row in table_header %}
@@ -74,5 +73,35 @@
         {% endif %}
     </div>
 
+    <div class="col-lg-12">
+        <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Row Clasify</button>
+        <div class="panel panel-default collapse" id="cl-form" >
+            <div class="panel-body">
+                <div class="clearfix">
+                    <form>
+                        <div class="col-sm-6 form-row">
+                            <input type="text" class="form-control" id="Factura" placeholder="Factura">
+                        </div>
+                        <div class="col-sm-6 form-row" >
+                            <input type="text" class="form-control" id="Cliente" placeholder="Cliente">
+                        </div>
+                        <div class="col-sm-6 form-row">
+                            <input type="text" class="form-control" id="Valor" placeholder="Valor Factura">
+                        </div>
+                        <div class="col-sm-6 form-row">
+                            <input type="text" class="form-control" id="Fecha-Min" placeholder="Fecha Mínima">
+                        </div>
+                        <div class="col-sm-6 form-row">
+                            <input type="text" class="form-control" id="Fecha-Max" placeholder="Fecha Máxima">
+                        </div>
+                        <div class="col-sm-6 form-row">
+                            <input type="text" class="form-control" id="Dirección" placeholder="Dirección">
+                        </div>
+                        <button type="button" id="contact_submit" class="btn btn-dm">Add Row</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
