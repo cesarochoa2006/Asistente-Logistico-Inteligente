@@ -13,32 +13,40 @@
     <link href="https://fonts.googleapis.com/css?family=Amaranth:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kalam:700" rel="stylesheet">
     <link href="{% static 'style.css' %}" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:700i" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:700i" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCiQYTNub53NHbde4y56ID6Ro8K7m3avZE"></script>
+
 </head>
 <body>
-<!-- Header -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-field">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'bills:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true">  </span>
-                Logistic Inteligent Asistant  </a>
-        </div>
-        <!-- Items -->
-        <div class="collapse navbar-collapse" id="topNavBar">
-            <ul class="nav navbar-nav">
-            </ul>
-        </div>
-    </div>
-</nav>
 
-{% block body %}
-{% endblock %}
+    <!-- Header -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-field">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'bills:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true">  </span>
+                    Logistic Inteligent Asistant  </a>
+            </div>
+            <!-- Items -->
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
 <script src="{% static 'main.js' %}"></script>
+<script src="{% static 'TweenLite.min.js' %}"></script>
+<script src="{% static 'EasePack.min.js' %}"></script>
+<script src="{% static 'rAF.js' %}"></script>
+<script src="{% static 'animation.js' %}"></script>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 </body>
 </html>

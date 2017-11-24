@@ -26,10 +26,12 @@ h1{
     text-transform: uppercase;
 }
 .father{
+
     display: inline-block;
     width: 800px;
     margin: auto;
     text-align: justify;
+
 }
 .panel-default {
     box-shadow: 0 2px 4px 0 black,0 2px 4px 0 black;
@@ -54,6 +56,10 @@ h1{
 .body{
     margin-top: 50px;
     width: 98%;
+    /*-webkit-transform: translate3d(0%,-80%,0);
+	transform: translate3d(0%,-80%,0);*/
+    top:0.5%;
+    position: absolute;
 }
 
 #map-canvas{
@@ -103,3 +109,14 @@ h1{
     float:left;
     margin: 20px;
 }
+
+.large-header {
+    position: relative;
+    width: 100%;
+    background-color: #6ca9ea;
+    overflow: visible;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+}
+

@@ -1,33 +1,38 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container body">
-    <div class="col-lg-18">
-        <div class="father">
-            <div class="col-sm-6">
-                <ul><h3>Features: </h3>
-                    <li><h5>Ms. Excel. Data reading</h5></li>
-                    <li><h5>Dinamic data content</h5></li>
-                    <li><h5>Inteligent operator clasification</h5></li>
-                    <li><h5>Optimal dispatch generation</h5></li>
-                    <li><h5>Inteligent routes optimization</h5></li>
-                </ul>
-            </div><div class="col-sm-4">
-            <ul><h3>Credits: </h3>
-                <li><h5>Cesar Ochoa</h5></li>
-                <li><h5>Fredy Mendez</h5></li>
-                <li><h5>Yesid Ochoa</h5></li>
-            </ul>
-            <h2>Version 1.0</h2>
-        </div>
-        </div>
-        <div>
-            {% if count_rows < 1 %}
-            <a href="{% url 'bills:upload_file' %}">
-                <button type="button" class="btn btn-default" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload </button>
-            </a>
-            <p>*Remember, your Excel file has to be named "DATOS.xlsx"</p>
+        <div id="large-header" class="large-header">
+<canvas id="demo-canvas"></canvas>
+    <div class="container body">
 
+        <div class="col-lg-18">
+
+            <div class="father">
+                <div class="col-sm-6">
+                    <ul><h3>Features: </h3>
+                        <li><h5>Ms. Excel. Data reading</h5></li>
+                        <li><h5>Dinamic data content</h5></li>
+                        <li><h5>Inteligent operator clasification</h5></li>
+                        <li><h5>Optimal dispatch generation</h5></li>
+                        <li><h5>Inteligent routes optimization</h5></li>
+                    </ul>
+                </div><div class="col-sm-4">
+                <ul><h3>Credits: </h3>
+                    <li><h5>Cesar Ochoa</h5></li>
+                    <li><h5>Fredy Mendez</h5></li>
+                    <li><h5>Yesid Ochoa</h5></li>
+                </ul>
+                <h2>Version 1.0</h2>
+            </div>
+            </div>
         </div>
+
+        {% if count_rows < 1 %}
+        <a href="{% url 'bills:upload_file' %}">
+            <button type="button" class="btn btn-default" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload </button>
+        </a>
+        <p>*Remember, your Excel file has to be named "DATOS.xlsx"</p>
+
+
         {% else %}
         {% if file_list %}
         <ul id="home_list_1">
@@ -92,98 +97,99 @@
             {% endif %}
         </ul>
         {% endif %}
-    </div>
 
-    <div class="col-lg-12" >
 
-        <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Data Clasification</button>
-        <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#routes">View Routes On Map</button>
+        <div class="col-lg-12" >
 
-    </div>
-    <div class="col-lg-12">
-        <div class="panel panel-default collapse" id="routes">
-            <div class="panel-body">
-                <table class=" table table-striped" id="conf-table">
-                    <tr>
-                        <td colspan="2"><b>Configuration</b></td>
-                    </tr>
-                    <tr id="locate-button">
-                        <td colspan="2">
-                            <input id="add" type="text" placeholder="Write an address">
-                            <button id="locate-dir" class="btn btn-sm">Locate Direction</button>
-                        </td>
-                    <tr>
-                        <td><button id="get-dir" class="btn btn-default">Get Directions from Database</button></td>
-                        <td><p>Status: </p><p id="get-status"></p>
-                        </td>
-                    </tr>
-                    </tr>
-                    <tr>
-                        <td>Avoid Highways: </td>
-                        <td>
-                            <select id="avoid-highways">
-                                <option value="1">Enabled</option>
-                                <option value="0" selected="selected">Disabled</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Elitism (Fast Mode):</td>
-                        <td>
-                            <select id="elitism">
-                                <option value="1" >Enabled</option>
-                                <option value="0" selected="selected">Disabled</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Destinations Count: </td>
-                        <td id="destinations-count">0</td>
-                    </tr>
-                    <tr class="ga-info" style="display:none;">
-                        <td>Generations: </td><td id="generations-passed">0</td>
-                    </tr>
-                    <tr class="ga-info" style="display:none;">
-                        <td>Best Time: </td><td id="best-time">?</td>
-                    </tr>
-                    <tr id="ga-buttons">
-                        <td colspan="2"><button id="find-route" class="btn btn-default">Start</button> <button class="btn btn-default" id="clear-map">Clear</button></td>
-                    </tr>
-                </table>
-                <div id="map-canvas" style="width:800px; height:550px; margin: 10px"></div>
-                <button type="button" class="btn btn-dm" id="reload-map" data-toggle="collapse" data-target="#routes">Reload the Map</button>
-            </div>
+            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Data Clasification</button>
+            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#routes">View Routes On Map</button>
+
         </div>
-        <div class="panel panel-default collapse" id="cl-form" >
-            <div class="panel-body">
-                <div class="clearfix">
-                    <h3>Add Row</h3>
-                    <form>
-                        <div class="col-sm-6 form-row">
-                            <input type="text" class="form-control" id="Factura" placeholder="Factura">
-                        </div>
-                        <div class="col-sm-6 form-row" >
-                            <input type="text" class="form-control" id="Cliente" placeholder="Cliente">
-                        </div>
-                        <div class="col-sm-6 form-row">
-                            <input type="text" class="form-control" id="Valor" placeholder="Valor Factura">
-                        </div>
-                        <div class="col-sm-6 form-row">
-                            <input type="text" class="form-control" id="Fecha-Min" placeholder="Fecha Mínima">
-                        </div>
-                        <div class="col-sm-6 form-row">
-                            <input type="text" class="form-control" id="Fecha-Max" placeholder="Fecha Máxima">
-                        </div>
-                        <div class="col-sm-6 form-row">
-                            <input type="text" class="form-control" id="Dirección" placeholder="Dirección">
-                        </div>
-                        <button type="button" id="contact_submit" class="btn btn-dm">Add Row</button>
-                    </form>
+        <div class="col-lg-12">
+            <div class="panel panel-default collapse" id="routes">
+                <div class="panel-body">
+                    <table class=" table table-striped" id="conf-table">
+                        <tr>
+                            <td colspan="2"><b>Configuration</b></td>
+                        </tr>
+                        <tr id="locate-button">
+                            <td colspan="2">
+                                <input id="add" type="text" placeholder="Write an address">
+                                <button id="locate-dir" class="btn btn-sm">Locate Direction</button>
+                            </td>
+                        <tr>
+                            <td><button id="get-dir" class="btn btn-default">Get Directions from Database</button></td>
+                            <td><p>Status: </p><p id="get-status"></p>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>Avoid Highways: </td>
+                            <td>
+                                <select id="avoid-highways">
+                                    <option value="1">Enabled</option>
+                                    <option value="0" selected="selected">Disabled</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Elitism (Fast Mode):</td>
+                            <td>
+                                <select id="elitism">
+                                    <option value="1" >Enabled</option>
+                                    <option value="0" selected="selected">Disabled</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Destinations Count: </td>
+                            <td id="destinations-count">0</td>
+                        </tr>
+                        <tr class="ga-info" style="display:none;">
+                            <td>Generations: </td><td id="generations-passed">0</td>
+                        </tr>
+                        <tr class="ga-info" style="display:none;">
+                            <td>Best Time: </td><td id="best-time">?</td>
+                        </tr>
+                        <tr id="ga-buttons">
+                            <td colspan="2"><button id="find-route" class="btn btn-default">Start</button> <button class="btn btn-default" id="clear-map">Clear</button></td>
+                        </tr>
+                    </table>
+                    <div id="map-canvas" style="width:800px; height:550px; margin: 10px"></div>
+                    <button type="button" class="btn btn-dm" id="reload-map" data-toggle="collapse" data-target="#routes">Reload the Map</button>
                 </div>
             </div>
-        </div>
+            <div class="panel panel-default collapse" id="cl-form" >
+                <div class="panel-body">
+                    <div class="clearfix">
+                        <h3>Add Row</h3>
+                        <form>
+                            <div class="col-sm-6 form-row">
+                                <input type="text" class="form-control" id="Factura" placeholder="Factura">
+                            </div>
+                            <div class="col-sm-6 form-row" >
+                                <input type="text" class="form-control" id="Cliente" placeholder="Cliente">
+                            </div>
+                            <div class="col-sm-6 form-row">
+                                <input type="text" class="form-control" id="Valor" placeholder="Valor Factura">
+                            </div>
+                            <div class="col-sm-6 form-row">
+                                <input type="text" class="form-control" id="Fecha-Min" placeholder="Fecha Mínima">
+                            </div>
+                            <div class="col-sm-6 form-row">
+                                <input type="text" class="form-control" id="Fecha-Max" placeholder="Fecha Máxima">
+                            </div>
+                            <div class="col-sm-6 form-row">
+                                <input type="text" class="form-control" id="Dirección" placeholder="Dirección">
+                            </div>
+                            <button type="button" id="contact_submit" class="btn btn-dm">Add Row</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
+    {% endblock %}
 </div>
-{% endblock %}
