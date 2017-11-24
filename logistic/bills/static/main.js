@@ -11,7 +11,11 @@ var durations = [];
 $('#routes').on('shown.bs.collapse', function (e) {
     initializeMap();
 
-    })
+    });
+$("#reload-map").click(function () {
+    $("#routes").load(location.href+" #routes>*","");
+
+});
 // Initialize google maps
 function initializeMap() {
     // Map options
