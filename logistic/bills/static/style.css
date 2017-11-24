@@ -1,5 +1,5 @@
 body{
-    background-color:#ffffe4;
+    background-color:#6ca9ea;
     /*background: #eaeaea;*/
     /*font-family: 'Kalam', sans-serif;*/
     font-family: 'Ubuntu Mono', monospace;
@@ -9,7 +9,7 @@ body{
 }
 .navbar{
     border-radius:0;
-    box-shadow: 1px 1px 1px 1px #337ab7;
+    box-shadow: 0 2px 4px 0 black,0 2px 4px 0 black;
 
 }
 .navbar-brand{
@@ -63,7 +63,7 @@ h1{
 #conf-table{
     border-style: outset;
     border-color: #337ab7;
-    width: 400px;
+    width: 380px;
     height: 550px;
     float: right;
     margin: 10px;
@@ -93,4 +93,8 @@ h1{
 
 #upload-container{
     margin-top: 50px;
+}
+.buttons{
+    float:left;
+    margin: 20px;
 }

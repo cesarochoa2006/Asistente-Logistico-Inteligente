@@ -8,6 +8,10 @@ var prevNodes = [];
 var markers = [];
 var durations = [];
 
+$('#routes').on('shown.bs.collapse', function (e) {
+    initializeMap();
+
+    })
 // Initialize google maps
 function initializeMap() {
     // Map options

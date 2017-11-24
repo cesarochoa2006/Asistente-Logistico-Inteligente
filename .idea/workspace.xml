@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe3de5d-b9b0-4bca-9509-740c9dc5e447" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/DATOS.xlsx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/db.sqlite3" afterPath="$PROJECT_DIR$/logistic/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/clasify.py" afterPath="$PROJECT_DIR$/logistic/bills/clasify.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/static/main.js" afterPath="$PROJECT_DIR$/logistic/bills/static/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/static/style.css" afterPath="$PROJECT_DIR$/logistic/bills/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/templates/base.html" afterPath="$PROJECT_DIR$/logistic/bills/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" afterPath="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/views.py" afterPath="$PROJECT_DIR$/logistic/bills/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +31,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="clasify.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clasify.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/clasify.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
@@ -100,8 +94,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/static/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6116">
-              <caret line="278" column="60" lean-forward="false" selection-start-line="278" selection-start-column="60" selection-end-line="278" selection-end-column="60" />
+            <state relative-caret-position="154">
+              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -120,18 +114,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-902">
-              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="1050">
+              <caret line="82" column="128" lean-forward="true" selection-start-line="82" selection-start-column="128" selection-end-line="82" selection-end-column="128" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logistic/bills/templates/routes/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1232">
+              <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+            <state relative-caret-position="330">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -190,15 +194,15 @@
         <option value="$USER_HOME$/OneDrive - Universidad Nacional de Colombia/Alvarez Hernandez Html/Página/main_files_html/contact.html" />
         <option value="$PROJECT_DIR$/logistic/bills/urls.py" />
         <option value="$PROJECT_DIR$/logistic/bills/templates/bills/upload-file.html" />
-        <option value="$PROJECT_DIR$/logistic/bills/static/main.js" />
         <option value="$PROJECT_DIR$/logistic/bills/templates/base.html" />
         <option value="$USER_HOME$/Downloads/plot_iris.py" />
         <option value="$USER_HOME$/Downloads/plot_iris_dataset.py" />
-        <option value="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" />
         <option value="$PROJECT_DIR$/logistic/bills/templates/routes/index.html" />
-        <option value="$PROJECT_DIR$/logistic/bills/static/style.css" />
         <option value="$PROJECT_DIR$/logistic/bills/views.py" />
         <option value="$PROJECT_DIR$/logistic/bills/clasify.py" />
+        <option value="$PROJECT_DIR$/logistic/bills/static/main.js" />
+        <option value="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" />
+        <option value="$PROJECT_DIR$/logistic/bills/static/style.css" />
       </list>
     </option>
   </component>
@@ -277,6 +281,22 @@
               <item name="logistic" type="462c0819:PsiDirectoryNode" />
               <item name="bills" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-IA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-IA" type="462c0819:PsiDirectoryNode" />
+              <item name="logistic" type="462c0819:PsiDirectoryNode" />
+              <item name="bills" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="bills" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-IA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-IA" type="462c0819:PsiDirectoryNode" />
+              <item name="logistic" type="462c0819:PsiDirectoryNode" />
+              <item name="bills" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Proyecto-IA" type="b2602c69:ProjectViewProjectNode" />
@@ -406,6 +426,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16993958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -415,7 +436,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -743,42 +764,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/static/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6116">
-          <caret line="278" column="60" lean-forward="false" selection-start-line="278" selection-start-column="60" selection-end-line="278" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/templates/routes/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logistic/bills/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-902">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -800,6 +789,38 @@
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic/bills/templates/routes/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic/bills/static/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="82" column="128" lean-forward="true" selection-start-line="82" selection-start-column="128" selection-end-line="82" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

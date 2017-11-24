@@ -3,7 +3,7 @@
 <div class="container body">
     <div class="col-lg-18">
         <div>
-            <h1>Files & Data</h1>
+            <h3>Credits:  <span><h4>Cesar Ochoa</h4></span><span><h4>Fredy Mendez</h4></span><span><h4>Yesid Ochoa</h4></span></h3>
             {% if count_rows < 1 %}
             <a href="{% url 'bills:upload_file' %}">
                 <button type="button" class="btn btn-default" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload </button>
@@ -77,16 +77,69 @@
         {% endif %}
     </div>
 
-    <div class="col-lg-12">
-        <ul id="btn-list">
-            <li><button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Row Clasify</button>
-            </li>
-        </ul>
+    <div class="col-lg-12" >
+
+            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Data Clasification</button>
+            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#routes">View Routes On Demand</button>
+
     </div>
         <div class="col-lg-12">
+            <div class="panel panel-default collapse" id="routes">
+                <div class="panel-body">
+                    <table class=" table table-striped" id="conf-table">
+                        <tr>
+                            <td colspan="2"><b>Configuration</b></td>
+                        </tr>
+                        <tr id="locate-button">
+                            <td colspan="2">
+                                <input id="add" type="text" placeholder="Write an address">
+                                <button id="locate-dir" class="btn btn-sm">Locate Direction</button>
+                            </td>
+                        <tr>
+                        <td><button id="get-dir" class="btn btn-default">Get Directions from Database</button></td>
+                            <td><p>Status: </p><p id="get-status"></p>
+                        </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>Avoid Highways: </td>
+                            <td>
+                                <select id="avoid-highways">
+                                    <option value="1">Enabled</option>
+                                    <option value="0" selected="selected">Disabled</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Elitism (Fast Mode):</td>
+                            <td>
+                                <select id="elitism">
+                                    <option value="1" >Enabled</option>
+                                    <option value="0" selected="selected">Disabled</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Destinations Count: </td>
+                            <td id="destinations-count">0</td>
+                        </tr>
+                        <tr class="ga-info" style="display:none;">
+                            <td>Generations: </td><td id="generations-passed">0</td>
+                        </tr>
+                        <tr class="ga-info" style="display:none;">
+                            <td>Best Time: </td><td id="best-time">?</td>
+                        </tr>
+                        <tr id="ga-buttons">
+                            <td colspan="2"><button id="find-route" class="btn btn-default">Start</button> <button class="btn btn-default" id="clear-map">Clear</button></td>
+                        </tr>
+                    </table>
+                    <div id="map-canvas" style="width:800px; height:550px; margin: 10px"></div>
+                </div>
+            </div>
         <div class="panel panel-default collapse" id="cl-form" >
             <div class="panel-body">
                 <div class="clearfix">
+                    <h3>Add Row</h3>
                     <form>
                         <div class="col-sm-6 form-row">
                             <input type="text" class="form-control" id="Factura" placeholder="Factura">
