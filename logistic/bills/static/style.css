@@ -1,8 +1,11 @@
 body{
-    background: #eaeaea;
-    font-family: 'Kalam', sans-serif;
+    background-color:#ffffe4;
+    /*background: #eaeaea;*/
+    /*font-family: 'Kalam', sans-serif;*/
+    font-family: 'Ubuntu Mono', monospace;
     font-size: 1.5em;
     text-align: center;
+
 }
 .navbar{
     border-radius:0;
@@ -12,6 +15,10 @@ body{
 .navbar-brand{
     font-family: 'Kalam' , cursive;
 }
+.table-striped{
+    border-color: #337ab7;
+}
+
 .nav{
     text-transform: uppercase;
 }
@@ -19,9 +26,10 @@ h1{
     text-transform: uppercase;
 }
 
-.panel-default, #spreadsheet{
+.panel-default {
     box-shadow: 0 2px 4px 0 gray,0 2px 4px 0 gray;
     margin: 10px;
+
 }
 .panel-default:hover{
     box-sizing: border-box;
@@ -40,6 +48,7 @@ h1{
 }
 .body{
     margin-top: 50px;
+    width: 98%;
 }
 
 #map-canvas{
@@ -63,11 +72,11 @@ h1{
     float:left;
     position: relative;
      overflow: scroll;
-    max-height: 340px;
-    max-width: 1000px;
+    max-height: 342px;
+    max-width: 1050px;
 
 }
-#home_list_1,#home_list_2{
+#home_list_1,#btn-list{
     list-style-type: none;
     margin: 0;
     padding: 0;

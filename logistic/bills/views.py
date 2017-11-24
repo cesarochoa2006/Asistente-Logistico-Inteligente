@@ -16,7 +16,7 @@ class IndexView(ListView):
     context_object_name = 'Files'
     template_name = 'bills/index.html'
     queryset = File.objects.all()
-    file_path = os.path.join(MEDIA_ROOT,'DATOS.xlsx')# or None
+    file_path = os.path.join(MEDIA_ROOT,'DATOS.xlsx') or None
 
 
     def get_context_data(self, **kwargs):

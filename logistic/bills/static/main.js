@@ -277,7 +277,7 @@ var ga = {
         ga.mutationRate = 0.2;
         ga.populationSize = 200;
         ga.elitism = parseInt($('#elitism').val()) || false;
-        ga.maxGenerations = 150;
+        ga.maxGenerations = 100;
     },
 
     // Evolves given population
