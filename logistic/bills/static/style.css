@@ -55,7 +55,7 @@ h1{
 }
 .body{
     margin-top: 50px;
-    width: 98%;
+    width: 100%;
     /*-webkit-transform: translate3d(0%,-80%,0);
 	transform: translate3d(0%,-80%,0);*/
     top:0.5%;
@@ -114,9 +114,9 @@ h1{
     position: relative;
     width: 100%;
     background-color: #6ca9ea;
-    overflow: visible;
+    overflow:scroll;
     background-size: cover;
     background-position: center center;
-    z-index: -1;
+    z-index: 1;
 }
 
