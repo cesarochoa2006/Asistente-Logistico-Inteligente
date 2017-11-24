@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe3de5d-b9b0-4bca-9509-740c9dc5e447" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/bills/templates/routes/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic/routes/views.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/static/style.css" afterPath="$PROJECT_DIR$/logistic/bills/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/templates/base.html" afterPath="$PROJECT_DIR$/logistic/bills/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" afterPath="$PROJECT_DIR$/logistic/bills/templates/bills/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/logistic/settings.py" afterPath="$PROJECT_DIR$/logistic/logistic/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logistic/logistic/urls.py" afterPath="$PROJECT_DIR$/logistic/logistic/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,9 +69,14 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +84,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
+            <state relative-caret-position="220">
+              <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -754,16 +746,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logistic/bills/templates/bills/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="272">
+          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logistic/bills/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
+        <state relative-caret-position="220">
+          <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding />
         </state>
       </provider>

@@ -7,6 +7,7 @@
                 <ul><h3>Features: </h3>
                     <li><h5>Ms. Excel. Data reading</h5></li>
                     <li><h5>Dinamic data content</h5></li>
+                    <li><h5>Automatic dispatch generation</h5></li>
                     <li><h5>Inteligent operator clasification</h5></li>
                     <li><h5>Inteligent routes optimization</h5></li>
                 </ul>
@@ -27,10 +28,9 @@
         </div>
         {% else %}
         {% if file_list %}
-        <ul id="home_list_1">
-            <li >
-                <div class="col-sm-2">
-                    <div class="panel panel-default" style="text-align: center">
+        <ul id="home_list_1" style="max-height: 340px;">
+                <li style="height: 99%; max-width: 180px;">
+                    <div class="panel panel-default" style="text-align: center;">
                         <div class="panel-body">
                             <h3>Training Data</h3>
                             <div class="thumbnail">
@@ -59,36 +59,38 @@
                         </div>
 
                     </div>
-                </div>
-            </li>
-            {% if content_table %}
-            <li>
-                <div class="panel panel-default" id="spreadsheet">
-                    <table class="table table-striped">
-                        <thead >
-                        <tr><h3>Datos</h3></tr>
-                        <tr>
-                            {% for row in table_header %}
-                            <td><h5>{{row}}</h5></td>
-                            {% endfor %}
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for attr in content_table %}
-                        <tr>
-                            {% for value in attr %}
-                            <td>{{ value }}</td>
-                            {% endfor %}
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
 
-            </li>
-            {% endif %}
+                </li>
+                {% if content_table %}
+                <li style="float: right">
+                    <div class="panel panel-default" id="spreadsheet">
+                        <table class="table table-striped">
+                            <thead >
+                            <tr><h3>Datos</h3></tr>
+                            <tr>
+                                {% for row in table_header %}
+                                <td><h5>{{row}}</h5></td>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for attr in content_table %}
+                            <tr>
+                                {% for value in attr %}
+                                <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% endif %}
+                </li>
+
+
         </ul>
         {% endif %}
+
     </div>
 
     <div class="col-lg-12" >

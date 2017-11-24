@@ -9,7 +9,7 @@ body{
 }
 .navbar{
     border-radius:0;
-    box-shadow: 0 2px 4px 0 black,0 2px 4px 0 black;
+    box-shadow: 0 2px 4px 0 black,0 4px 6px 0 black;
 
 }
 .navbar-brand{
@@ -77,7 +77,7 @@ h1{
     float:left;
     position: relative;
      overflow: scroll;
-    max-height: 342px;
+    max-height: 330.8px;
     max-width: 1050px;
 
 }
