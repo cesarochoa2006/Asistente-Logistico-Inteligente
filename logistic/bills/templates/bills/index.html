@@ -3,11 +3,10 @@
         <div id="large-header" class="large-header">
 <canvas id="demo-canvas"></canvas>
     <div class="container body">
-
         <div class="col-lg-18">
             <div class="father">
                 <div class="col-sm-8">
-                    <ul><h3>Features: </h3>
+                    <ul><h3>FEATURES </h3>
                         <li><h4>Ms. Excel. Data reading</h4></li>
                         <li><h4>Dinamic data content</h4></li>
                         <li><h4>Intelligent operator clasification</h4></li>
@@ -15,7 +14,7 @@
                         <li><h4>Intelligent routes optimization</h4></li>
                     </ul>
                 </div><div class="col-sm-4">
-                <ul><h3>Credits: </h3>
+                <ul><h3>CREDITS </h3>
                     <li><h4>Cesar Ochoa</h4></li>
                     <li><h4>Fredy Mendez</h4></li>
                     <li><h4>Yesid Ochoa</h4></li>
@@ -71,9 +70,9 @@
             {% if content_table %}
             <li>
                 <div class="panel panel-default" id="spreadsheet">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-condensed">
                         <thead >
-                        <tr><h3>Datos</h3></tr>
+                        <tr><h3>Datos de Entrenamiento</h3></tr>
                         <tr>
                             {% for row in table_header %}
                             <td><h5>{{row}}</h5></td>
@@ -99,9 +98,37 @@
 
 
         <div class="col-lg-12" >
-
-            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Data Clasification</button>
+            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#spreadsheet1">Data Clasification</button>
+            <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#cl-form">Single Row Clasification</button>
             <button type="button" class="btn btn-dm" data-toggle="collapse" data-target="#routes">View Routes On Map</button>
+
+        </div>
+        <div class="col-lg-12">
+
+            <div class="panel panel-default collapse" id="spreadsheet1">
+                    {% if clasification_table %}
+                    <table class="table table-striped table-condensed">
+                        <thead >
+                        <tr><h3>Datos Clasificados</h3></tr>
+                        <tr>
+                            {% for row in table_header %}
+                            <td><h5>{{row}}</h5></td>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for attr in clasification_table %}
+                        <tr>
+                            {% for value in attr %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            <button type="button" class="btn btn-dm" id="gen-cla">Generate Table</button>
+                </div>
 
         </div>
         <div class="col-lg-12">

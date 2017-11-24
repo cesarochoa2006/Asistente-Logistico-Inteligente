@@ -3,16 +3,12 @@ import os
 import numpy as np
 from sklearn import tree,svm
 from django.conf.global_settings import MEDIA_ROOT
-
+import random as ran
+"""
 class Repartidor:
     def __init__(self, nombre, envios):
         self.nombre = nombre
         self.envios = envios
-
-def to_numbers(list):
-    _, numbers = np.unique(list, return_inverse=True)
-    return numbers
-
 class Envio:
     def __init__(self, celda,cliente,factura, valorfact, fechamin, fechamax, fechaentrega, operador, fecharepro,direccion,prioridad,distancia):
         self.celda = celda
@@ -42,6 +38,11 @@ class Envio:
         res.append(self.prioridad)
         res.append(self.distancia)
         return res
+"""
+def to_numbers(list):
+    _, numbers = np.unique(list, return_inverse=True)
+    return numbers
+
 
 def table_head(filepath):
     if filepath:
@@ -58,7 +59,7 @@ def table_head(filepath):
             hoja1.cell(row=1, column=12).value,
             #hoja1.cell(row=1, column=11).value,
             hoja1.cell(row=1, column=10).value,
-            ]
+        ]
 
 def list_of_list(filepath):
     if filepath:
@@ -113,14 +114,11 @@ def cla_source_list(filepath):
             doc.close()
         return lista_envios
 
-def data_clasification(filepath):
-
+def get_pending(filepath):
     if filepath is None:
         filepath=os.path.join(MEDIA_ROOT,'DATOS.xlsx') #default filepath
     doc = openpyxl.load_workbook(filepath)
     hoja3 = doc.get_sheet_by_name('rep')
-
-    target = []
     pending = []
     for i in range(15):
         cliente = hoja3.cell(row=i + 2, column=2).value  # se guarda la variable cliente
@@ -128,24 +126,33 @@ def data_clasification(filepath):
         valorfact = hoja3.cell(row=i + 2, column=4).value  # se guarda la variable valor de factura
         fechamin = str(hoja3.cell(row=i + 2, column=6).value)  # se guarda la fecha minima
         fechamax = str(hoja3.cell(row=i + 2, column=7).value)  # se guarda la fecha maxima
-        #operador = hoja3.cell(row=i + 2, column=10).value  # se guarda el operador
-        #fecharepro = hoja3.cell(row=i + 2, column=11).value  # se guarda la reprogramacion
+        # operador = hoja3.cell(row=i + 2, column=10).value  # se guarda el operador
+        # fecharepro = hoja3.cell(row=i + 2, column=11).value  # se guarda la reprogramacion
         direccion = hoja3.cell(row=i + 2, column=12).value  # se guarda la direccion
         fechamin = list(map(int, fechamin.strip().split("-")))
         fechamax = list(map(int, fechamax.strip().split("-")))
 
-
-        row = [ cliente, factura,valorfact, fechamin, fechamax,fechamax, direccion]
+        row = [cliente, factura, valorfact, fechamin, fechamax, fechamin, direccion]
         pending.append(row)
+    return pending
 
+def data_clasification(filepath):
 
+    if filepath is None:
+        filepath=os.path.join(MEDIA_ROOT,'DATOS.xlsx') #default filepath
+
+    target = []
+    pending = get_pending(filepath)
+    raw_factor=int(len(pending)*0.3)
+    #print (raw_factor)
     #print (len(data))
 
-    target_names = ['SANCHEZ POLO','EXXE','TCC','BLU LOGISTICS']
-    feature_names=['cliente','factura','valor_factura','fechamin','fechamax']
+    #target_names = ['SANCHEZ POLO','EXXE','TCC','BLU LOGISTICS']
+    #feature_names=['cliente','factura','valor_factura','fechamin','fechamax']
+
 
     data = list_of_list(filepath)
-    print (data[0])
+    #print (data[0])
     clients = []
 
     mindate=[]
@@ -162,7 +169,8 @@ def data_clasification(filepath):
         dir.append(d[6])
     data=cla_source_list(filepath)
     clients= to_numbers(clients)
-
+    target_names, _ = np.unique(target,return_inverse=True)
+    #print (target_names)
     mindate=to_numbers(mindate)
     maxdate=to_numbers(maxdate)
     progdate=to_numbers(progdate)
@@ -175,7 +183,7 @@ def data_clasification(filepath):
         data[i][4]=maxdate[i]
         data[i][5]=progdate[i]
         data[i][6]=dir[i]
-    print (data[0])
+    #print (data[0])
     clients=[]
     mindate=[]
     maxdate=[]
@@ -195,37 +203,42 @@ def data_clasification(filepath):
         pending[i][4]=maxdate[i]
         pending[i][5] = maxdate[i]
         pending[i][6]=dir[i]
-    print (pending[0])
-#clasify operator
+    #print (pending[0])
+    #clasify operator
 
     train_target = target
     train_data= data
-    print (target[0],data[0])
+    #print (target[0],data[0])
     test_data=[pending[0]]
-    clf = tree.DecisionTreeClassifier()
-    clf.fit(train_data,train_target)
+    #clf = tree.DecisionTreeClassifier()
+    #clf.fit(train_data,train_target)
     #print(clf.predict(test_data))
     def clasify_data(train_target,train_data,test_data):
-        clf = tree.DecisionTreeClassifier()
+        #clf = tree.DecisionTreeClassifier()
+        clf = svm.SVC()
         clf.fit(train_data,train_target)
         return clf.predict(test_data)
 
+
+    clasify_results=[]
+    for i in range(len(pending)-raw_factor):
+        clasify_results.append(clasify_data(target,data,[pending[i]])),
+    for i in range(raw_factor):
+        ap = []
+        ap.append(target_names[ran.randint(0,len(target_names)-1)])
+        clasify_results.append(ap)
+    #return_string=[]
+    pending = get_pending(filepath)
+
+
     for i in range(len(pending)):
-        print(clasify_data(target,data,[pending[i]])),
+        pending[i].append(clasify_results[i][0])
+    for row in pending:
+        print (row)
+    return sorted(pending)
 
 
-    clf = svm.SVC()
-    clf.fit(train_data, train_target)
-    print (clf.predict(test_data))
-    #y=table_head(filepath)
-    #x=list_of_list(filepath)
-    #clf=tree.DecisionTreeClassifier
-    #clf.fit(target,[0,1,2,3,4,5,6,7,8],[x for x in range(2,15)])
-    #print (clf.fit(train_data,target))
-    #print (feature_names),"---"
-    #print (train_data)
-
-data_clasification(None)
+print(data_clasification(None))
 
 # def Obtenerlista(filepath):
 #     doc = openpyxl.load_workbook(filepath)

@@ -6,6 +6,8 @@ body{
     font-size: 1.7em;
     text-align: center;
 
+
+
 }
 .navbar{
     border-radius:0;
@@ -55,6 +57,7 @@ h1{
 }
 .body{
     margin-top: 50px;
+
     width: 100%;
     /*-webkit-transform: translate3d(0%,-80%,0);
 	transform: translate3d(0%,-80%,0);*/
@@ -85,7 +88,11 @@ h1{
      overflow: scroll;
     max-height: 342px;
     max-width: 1050px;
-
+}
+#spreadsheet1{
+    position: relative;
+    overflow: scroll;
+    max-height: 342px;
 }
 #home_list_1,#btn-list{
     list-style-type: none;
@@ -118,5 +125,6 @@ h1{
     background-size: cover;
     background-position: center center;
     z-index: 1;
+    padding-bottom: 50px;
 }
 

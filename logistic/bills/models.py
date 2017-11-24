@@ -12,3 +12,4 @@ class File(models.Model):
 #Store and retrieve Json Data
 class Data(models.Model):
     json= JSONField(load_kwargs={'object_pairs_hook': OrderedDict})
+
