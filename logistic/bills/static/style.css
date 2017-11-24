@@ -3,7 +3,7 @@ body{
     /*background: #eaeaea;*/
     /*font-family: 'Kalam', sans-serif;*/
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 1.5em;
+    font-size: 1.7em;
     text-align: center;
 
 }
@@ -25,9 +25,14 @@ body{
 h1{
     text-transform: uppercase;
 }
-
+.father{
+    display: inline-block;
+    width: 800px;
+    margin: auto;
+    text-align: justify;
+}
 .panel-default {
-    box-shadow: 0 2px 4px 0 gray,0 2px 4px 0 gray;
+    box-shadow: 0 2px 4px 0 black,0 2px 4px 0 black;
     margin: 10px;
 
 }
