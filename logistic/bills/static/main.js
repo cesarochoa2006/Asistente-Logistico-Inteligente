@@ -2,11 +2,17 @@ var map;
 var directionsDisplay = null;
 var directionsService;
 var polylinePath;
-
 var nodes = [];
 var prevNodes = [];
 var markers = [];
 var durations = [];
+var caribeVerde= {lat: 10.95489,lng: -74.83744660000002};
+
+$('#gen-dis').click( function() {
+
+  //console.log(table);
+  //alert(JSON.stringify(table));
+});
 
 $('#routes').on('shown.bs.collapse', function (e) {
     initializeMap();
@@ -14,13 +20,14 @@ $('#routes').on('shown.bs.collapse', function (e) {
     });
 $("#reload-map").click(function () {
     $("#routes").load(location.href+" #routes>*","");
+    nodes=[]
 
 });
 // Initialize google maps
 function initializeMap() {
     // Map options
     var opts = {
-        center: new google.maps.LatLng(10.935528765733343, -74.87937927246094),
+        center: caribeVerde,
         zoom: 12,
         streetViewControl: false,
         mapTypeControl: false,
@@ -30,9 +37,10 @@ function initializeMap() {
             stylers: [
                 {visibility: "off"}
             ]
-        }]
+        }],
 
-    }
+    };
+
     var geocoder = new google.maps.Geocoder();
 
     document.getElementById('locate-dir').addEventListener('click', function () {
@@ -50,6 +58,7 @@ function initializeMap() {
 
             });
             nodes.push(results[0].geometry.location);
+            $('#destinations-count').html(nodes.length);
             $('#get-status').text(''+status)
           } else {
             $('#get-status').text(''+status)
@@ -59,7 +68,6 @@ function initializeMap() {
       }
 
     map = new google.maps.Map(document.getElementById('map-canvas'), opts);
-
 
 
 
@@ -127,7 +135,7 @@ function getDurations(callback) {
             durations[originNodeIndex] = [];
             for (destinationNodeIndex in nodeDistanceData) {
                 if (durations[originNodeIndex][destinationNodeIndex] = nodeDistanceData[destinationNodeIndex].duration == undefined) {
-                    loadPopup({msg:'Error: couldn\'t get a trip duration from API'}, clearMapMarkers);
+                    loadPopup({msg:'Error: couldn\'t get a trip duration'}, clearMapMarkers);
                     return;
                 }
                 durations[originNodeIndex][destinationNodeIndex] = nodeDistanceData[destinationNodeIndex].duration.value;
