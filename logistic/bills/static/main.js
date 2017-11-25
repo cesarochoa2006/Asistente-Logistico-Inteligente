@@ -9,9 +9,32 @@ var durations = [];
 var caribeVerde= {lat: 10.95489,lng: -74.83744660000002};
 
 $('#gen-dis').click( function() {
-
-  //console.log(table);
-  //alert(JSON.stringify(table));
+    var dispatch=[]
+var temp_sum=0
+temp_array=[]
+  for (var i = 0; i < table.length; i++) {
+        aux_array = []
+        if (temp_sum < 1000000) {
+            aux_array.push(table[i][1]) //num_factura
+            aux_array.push(table[i][2]) //valor_factura
+            aux_array.push(table[i][6]) //direccion entrega
+            temp_array.push(aux_array)
+            temp_sum += table[i][2]
+            if (i===table.length-1){
+                dispatch.push(temp_array)
+            }
+        } else {
+            dispatch.push(temp_array)
+            temp_array = []
+            temp_sum = 0
+            aux_array.push(table[i][1]) //num_factura
+            aux_array.push(table[i][2]) //valor_factura
+            aux_array.push(table[i][6]) //direccion entrega
+            temp_array.push(aux_array)
+            temp_sum += table[i][2]
+        }
+    };
+    console.log(dispatch)
 });
 
 $('#routes').on('shown.bs.collapse', function (e) {
@@ -23,6 +46,7 @@ $("#reload-map").click(function () {
     nodes=[]
 
 });
+
 // Initialize google maps
 function initializeMap() {
     // Map options
@@ -291,7 +315,7 @@ var ga = {
     "getConfig": function() {
         ga.crossoverRate = 0.7;
         ga.mutationRate = 0.2;
-        ga.populationSize = 200;
+        ga.populationSize = 150;
         ga.elitism = parseInt($('#elitism').val()) || false;
         ga.maxGenerations = 100;
     },
