@@ -21,12 +21,15 @@ class IndexView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['file_list'] = File.objects.all()
-        context['count_rows'] = File.objects.count()
-        context['clasification_table']=cla.data_clasification(self.file_path)
-        context['content_table']=cla.list_of_list(self.file_path)
-        context['table_header'] = cla.table_head(self.file_path)
+        try:
 
+            context['file_list'] = File.objects.all()
+            context['count_rows'] = File.objects.count()
+            context['clasification_table']=cla.data_clasification(self.file_path)
+            context['content_table']=cla.list_of_list(self.file_path)
+            context['table_header'] = cla.table_head(self.file_path)
+        except:
+            print("Filepath is None")
             #context['content_table'] = None
             #context['table_header'] = None
         return context

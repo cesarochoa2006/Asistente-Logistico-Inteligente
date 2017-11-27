@@ -7,12 +7,13 @@ var prevNodes = [];
 var markers = [];
 var durations = [];
 var caribeVerde= {lat: 10.95489,lng: -74.83744660000002};
+var dispatch=[];
 
 $('#gen-dis').click( function() {
-    var dispatch=[]
-var temp_sum=0
-temp_array=[]
-  for (var i = 0; i < table.length; i++) {
+
+    var temp_sum=0
+    temp_array=[]
+    for (var i = 0; i < table.length; i++) {
         aux_array = []
         if (temp_sum < 1000000) {
             aux_array.push(table[i][1]) //num_factura
@@ -34,18 +35,47 @@ temp_array=[]
             temp_sum += table[i][2]
         }
     };
-    console.log(dispatch)
+    console.log(dispatch.length)
 });
 
 $('#routes').on('shown.bs.collapse', function (e) {
     initializeMap();
 
-    });
+});
 $("#reload-map").click(function () {
     $("#routes").load(location.href+" #routes>*","");
-    nodes=[]
+    clearMap();
 
 });
+
+
+//Geocode User Address
+function geocodeAddress(geocoder, resultsMap, address) {
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+            //resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location
+
+            });
+            nodes.push(results[0].geometry.location);
+
+            uniqueArray = nodes.filter(function(item, pos, self) {
+                return self.indexOf(item) == pos;
+            });
+            nodes = uniqueArray;
+            $('#destinations-count').html(nodes.length);
+            $('#get-status').text(''+status)
+        } else {
+            $('#get-status').text(''+status)
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+
+};
+
+
 
 // Initialize google maps
 function initializeMap() {
@@ -64,32 +94,13 @@ function initializeMap() {
         }],
 
     };
-
+    $('#get-status').text("");
     var geocoder = new google.maps.Geocoder();
-
+    //from locate-dir to map
     document.getElementById('locate-dir').addEventListener('click', function () {
-        geocodeAddress(geocoder, map);
-    });
-    //Geocode User Address
-    function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById('add').value;
-        geocoder.geocode({'address': address}, function(results, status) {
-          if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-              map: resultsMap,
-              position: results[0].geometry.location
-
-            });
-            nodes.push(results[0].geometry.location);
-            $('#destinations-count').html(nodes.length);
-            $('#get-status').text(''+status)
-          } else {
-            $('#get-status').text(''+status)
-              alert('Geocode was not successful for the following reason: ' + status);
-          }
-        });
-      }
+        geocodeAddress(geocoder, map,address);
+    });
 
     map = new google.maps.Map(document.getElementById('map-canvas'), opts);
 
@@ -141,6 +152,25 @@ function initializeMap() {
         });
     }
 }
+
+var geocoder = new google.maps.Geocoder();
+    //Get Directions From Database
+    $('#get-dir').click( function() {
+
+        if (dispatch.length > 0) {
+            //console.log(dispatch[0][2]);
+            for (var i = 0; i < dispatch[0].length; i++) {
+                console.log(dispatch[0][i][2])
+                geocodeAddress(geocoder, map, dispatch[0][i][2])
+            }
+            dispatch.splice(0,1);
+            $('#get-status').text("Dispatches Left: "+dispatch.length)
+        }
+        else{
+            $('#get-status').text("Dispatch List is Empty")
+        }
+    });
+
 
 // Get all durations depending on travel type
 function getDurations(callback) {

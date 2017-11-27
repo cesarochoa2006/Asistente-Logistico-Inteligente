@@ -115,8 +115,8 @@ def cla_source_list(filepath):
         return lista_envios
 
 def get_pending(filepath):
-    if filepath is None:
-        filepath=os.path.join(MEDIA_ROOT,'DATOS.xlsx') #default filepath
+    """if filepath is None:
+        filepath=os.path.join(MEDIA_ROOT,'DATOS.xlsx') or None""" #default filepath
     doc = openpyxl.load_workbook(filepath)
     hoja3 = doc.get_sheet_by_name('rep')
     pending = []
@@ -137,108 +137,110 @@ def get_pending(filepath):
     return pending
 
 def data_clasification(filepath):
-
+    """
     if filepath is None:
-        filepath=os.path.join(MEDIA_ROOT,'DATOS.xlsx') #default filepath
-
+        filepath=os.path.join(MEDIA_ROOT,'DATOS.xlsx') or None #default filepath
+    """
     target = []
-    pending = get_pending(filepath)
-    raw_factor=int(len(pending)*0.3)
-    #print (raw_factor)
-    #print (len(data))
+    try:
+        pending = get_pending(filepath)
+        raw_factor=int(len(pending)*0.3)
+        #print (raw_factor)
+        #print (len(data))
 
-    #target_names = ['SANCHEZ POLO','EXXE','TCC','BLU LOGISTICS']
-    #feature_names=['cliente','factura','valor_factura','fechamin','fechamax']
+        #target_names = ['SANCHEZ POLO','EXXE','TCC','BLU LOGISTICS']
+        #feature_names=['cliente','factura','valor_factura','fechamin','fechamax']
 
 
-    data = list_of_list(filepath)
-    #print (data[0])
-    clients = []
+        data = list_of_list(filepath)
+        #print (data[0])
+        clients = []
 
-    mindate=[]
-    maxdate=[]
-    progdate=[]
-    dir=[]
-    for d in data:
-        clients.append(d[0])
+        mindate=[]
+        maxdate=[]
+        progdate=[]
+        dir=[]
+        for d in data:
+            clients.append(d[0])
 
-        target.append(d[7])
-        mindate.append(d[3])
-        maxdate.append(d[4])
-        progdate.append(d[5])
-        dir.append(d[6])
-    data=cla_source_list(filepath)
-    clients= to_numbers(clients)
-    target_names, _ = np.unique(target,return_inverse=True)
-    #print (target_names)
-    mindate=to_numbers(mindate)
-    maxdate=to_numbers(maxdate)
-    progdate=to_numbers(progdate)
-    dir=to_numbers(dir)
-    #print (len(clients),len(operators))
-    for i in range(len(data)):
-        data[i][0]=clients[i]
+            target.append(d[7])
+            mindate.append(d[3])
+            maxdate.append(d[4])
+            progdate.append(d[5])
+            dir.append(d[6])
+        data=cla_source_list(filepath)
+        clients= to_numbers(clients)
+        target_names, _ = np.unique(target,return_inverse=True)
+        #print (target_names)
+        mindate=to_numbers(mindate)
+        maxdate=to_numbers(maxdate)
+        progdate=to_numbers(progdate)
+        dir=to_numbers(dir)
+        #print (len(clients),len(operators))
+        for i in range(len(data)):
+            data[i][0]=clients[i]
 
-        data[i][3]=mindate[i]
-        data[i][4]=maxdate[i]
-        data[i][5]=progdate[i]
-        data[i][6]=dir[i]
-    #print (data[0])
-    clients=[]
-    mindate=[]
-    maxdate=[]
-    dir=[]
-    for p in pending:
-        clients.append(p[0])
-        mindate.append(p[3])
-        maxdate.append(p[4])
-        dir.append(p[6])
-    clients=to_numbers(clients)
-    mindate = to_numbers(mindate)
-    maxdate = to_numbers(maxdate)
-    dir = to_numbers(dir)
-    for i in range(len(pending)):
-        pending[i][0]=clients[i]
-        pending[i][3]=mindate[i]
-        pending[i][4]=maxdate[i]
-        pending[i][5] = maxdate[i]
-        pending[i][6]=dir[i]
-    #print (pending[0])
-    #clasify operator
+            data[i][3]=mindate[i]
+            data[i][4]=maxdate[i]
+            data[i][5]=progdate[i]
+            data[i][6]=dir[i]
+        #print (data[0])
+        clients=[]
+        mindate=[]
+        maxdate=[]
+        dir=[]
+        for p in pending:
+            clients.append(p[0])
+            mindate.append(p[3])
+            maxdate.append(p[4])
+            dir.append(p[6])
+        clients=to_numbers(clients)
+        mindate = to_numbers(mindate)
+        maxdate = to_numbers(maxdate)
+        dir = to_numbers(dir)
+        for i in range(len(pending)):
+            pending[i][0]=clients[i]
+            pending[i][3]=mindate[i]
+            pending[i][4]=maxdate[i]
+            pending[i][5] = maxdate[i]
+            pending[i][6]=dir[i]
+        #print (pending[0])
+        #clasify operator
 
-    train_target = target
-    train_data= data
-    #print (target[0],data[0])
-    test_data=[pending[0]]
-    #clf = tree.DecisionTreeClassifier()
-    #clf.fit(train_data,train_target)
-    #print(clf.predict(test_data))
-    def clasify_data(train_target,train_data,test_data):
+        train_target = target
+        train_data= data
+        #print (target[0],data[0])
+        test_data=[pending[0]]
         #clf = tree.DecisionTreeClassifier()
-        clf = svm.SVC()
-        clf.fit(train_data,train_target)
-        return clf.predict(test_data)
+        #clf.fit(train_data,train_target)
+        #print(clf.predict(test_data))
+        def clasify_data(train_target,train_data,test_data):
+            #clf = tree.DecisionTreeClassifier()
+            clf = svm.SVC()
+            clf.fit(train_data,train_target)
+            return clf.predict(test_data)
 
 
-    clasify_results=[]
-    for i in range(len(pending)-raw_factor):
-        clasify_results.append(clasify_data(target,data,[pending[i]])),
-    for i in range(raw_factor):
-        ap = []
-        ap.append(target_names[ran.randint(0,len(target_names)-1)])
-        clasify_results.append(ap)
-    #return_string=[]
-    pending = get_pending(filepath)
+        clasify_results=[]
+        for i in range(len(pending)-raw_factor):
+            clasify_results.append(clasify_data(target,data,[pending[i]])),
+        for i in range(raw_factor):
+            ap = []
+            ap.append(target_names[ran.randint(0,len(target_names)-1)])
+            clasify_results.append(ap)
+        #return_string=[]
+        pending = get_pending(filepath)
 
 
-    for i in range(len(pending)):
-        pending[i].append(clasify_results[i][0])
-    for row in pending:
-        print (row)
-    return sorted(pending)
+        for i in range(len(pending)):
+            pending[i].append(clasify_results[i][0])
+        for row in pending:
+            print (row)
+        return (pending)
 
-
-print(data_clasification(None))
+    except:
+        print("Filepath is None")
+#print(data_clasification(None))
 
 # def Obtenerlista(filepath):
 #     doc = openpyxl.load_workbook(filepath)
