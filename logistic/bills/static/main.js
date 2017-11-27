@@ -66,7 +66,7 @@ function geocodeAddress(geocoder, resultsMap, address) {
             });
             nodes = uniqueArray;
             $('#destinations-count').html(nodes.length);
-            $('#get-status').text(''+status)
+            //$('#get-status').text(''+status)
         } else {
             $('#get-status').text(''+status)
             alert('Geocode was not successful for the following reason: ' + status);
@@ -206,6 +206,8 @@ function getDurations(callback) {
 function clearMapMarkers() {
     for (index in markers) {
         markers[index].setMap(null);
+
+
     }
 
     prevNodes = nodes;
@@ -272,7 +274,7 @@ $(document).ready(function() {
 
             ga.evolvePopulation(pop, function(update) {
                 $('#generations-passed').html(update.generation);
-                $('#best-time').html((update.population.getFittest().getDistance() / 60).toFixed(2) + ' Minutes');
+                $('#best-time').html(((update.population.getFittest().getDistance() / 60)/60).toFixed(2) + ' Hours');
 
                 // Get route coordinates
                 var route = update.population.getFittest().chromosome;
