@@ -1,8 +1,6 @@
 import openpyxl
-import os
 import numpy as np
 from sklearn import tree,svm
-from django.conf.global_settings import MEDIA_ROOT
 import random as ran
 """
 class Repartidor:
